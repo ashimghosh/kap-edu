@@ -1,0 +1,14 @@
+create table pacewf.certificate_tags (ID int not null GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1),
+SERVICE_ID int,
+tag_name varchar(100),
+primary key(ID)
+)
+create table pacewf.certificate_template (ID int not null GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1),
+SERVICE_ID int,
+CERTIFICATE blob (5M),
+HTML blob (5M),
+primary key(ID)
+)
+
+Alter TABLE pacewf.CERTIFICATE_TEMPLATE ADD COLUMN certificate_path VARCHAR (100);
+alter table pacewf.CERTIFICATE_TEMPLATE add column DIGITAL_SIGN_LOCATION varchar(100);	
